@@ -1,9 +1,7 @@
 # Gets the content of a book and count of all the words
-
+import sys
 from stats import book_word_count, book_char_count, sort_dicts
 
-#bookPath = input("Enter relative path to book: ") This is to remove hardcoded paths to books
-bookPath = "books/frankenstein.txt"
 
 def get_book_text(filePath):
     with open(filePath) as f:
@@ -12,6 +10,15 @@ def get_book_text(filePath):
 
 
 def main():
+
+    # Checks to see that a file path is provided, if not it exits
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        bookPath = str(sys.argv[1])
+        #print(len(sys.argv), type(sys.argv))
+
 
     book = get_book_text(bookPath)
     # Grabs total word count from book
@@ -30,9 +37,11 @@ def main():
     print("------ Character Count ------")
     
     for entry in dictSorted:
-        print(f"{entry["character"]}: {entry["count"]}")
+        print(f"{entry['character']}: {entry['count']}")
 
     print("\n============= END =============")
 
 
-main()
+if __name__=='__main__':
+
+    main()

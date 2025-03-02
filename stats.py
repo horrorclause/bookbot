@@ -1,10 +1,6 @@
 # Splits the book into a list and counts the individual words
 def book_word_count(book):
-    splitWords = book.split()
-    count = 0
-    for word in splitWords:
-        count += 1
-    return count
+    return len(book.split())
 
 # Counts the individual characters present in the book
 def book_char_count(book):
