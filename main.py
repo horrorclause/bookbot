@@ -16,8 +16,10 @@ def main():
     book = get_book_text(bookPath)
     # Grabs total word count from book
     wordCount = book_word_count(book)
-    # Counts of individual characters
+
+    # Counts of individual characters returns unsorted dictionary
     charCount = book_char_count(book)
+
     #Sorts and returns the character counts, takes charCount dicitionary as input
     dictSorted = sort_dicts(charCount)
 
@@ -26,9 +28,11 @@ def main():
     print("--------- Word Count ---------")
     print(f"Found {wordCount} total words\n")
     print("------ Character Count ------")
-    #print(f"{charCount}\n")
+    
     for entry in dictSorted:
         print(f"{entry["character"]}: {entry["count"]}")
+
+    print("\n============= END =============")
 
 
 main()
