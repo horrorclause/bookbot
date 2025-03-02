@@ -11,3 +11,4 @@ $ python3 main.py "books/prideandprejudice.txt"
 
 And the results will be provided:
 
+![image](https://github.com/user-attachments/assets/4d8df2ac-3093-4e13-9829-68742a224efa)
